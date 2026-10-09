@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cms-labs-capture-config
+  namespace: $NAME
+  labels:
+    cms-labs.io/capture-config: "true"
+data:
+  config.yaml: |-
+    limits:
+      maxConcurrent: 2
+      maxDuration: 60s
+      maxBytes: 52428800
+      maxPackets: 100000
+      maxSnapLength: 262144
+    storage:
+      retention: 10m

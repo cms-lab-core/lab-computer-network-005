@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cms-labs-terminal-config
+  namespace: $NAME
+  labels:
+    cms-labs.io/terminal-config: "true"
+data:
+  config.yaml: |-
+    targets:
+      - name: pc1
+        label: PC1
+        mode: exec
+        command: [/bin/sh]
+      - name: sw1
+        label: Switch SW1
+        mode: exec
+        command: [/bin/sh]
+      - name: pc2
+        label: PC2
+        mode: exec
+        command: [/bin/sh]
